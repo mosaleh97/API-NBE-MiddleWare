@@ -10,7 +10,7 @@ namespace API_NBE_MiddleWare.Controllers
 {
 
     [ApiController]
-    [Route("api/printer/[controller]")]
+    [Route("api/printer")]
     public class PrinterController : ControllerBase
     {
         [HttpPost("print")]
@@ -122,6 +122,7 @@ namespace API_NBE_MiddleWare.Controllers
                         {
                             PrintStatus = false,
                             PrintFormFailureMessage = "لقد حدث خطأ ما, يرجى المحاولة لاحقا",
+                            PrintFormFailureException = ex.Message,
                         },
                         FlowName = FailureFlow,
                         FacebookResponse = new
